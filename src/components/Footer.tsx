@@ -1,4 +1,7 @@
+// src/components/Footer.tsx
+
 import { Leaf, Github, Twitter, Linkedin, Mail } from 'lucide-react'
+import { ThemeToggle } from './ThemeToggle'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -7,7 +10,10 @@ export function Footer() {
     <footer className="bg-card border-t border-border">
       <div className="container px-4 py-12">
         <div className="max-w-7xl mx-auto">
+
+          {/* GRID */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+
             {/* Brand */}
             <div className="space-y-4">
               <div className="flex items-center gap-2">
@@ -43,9 +49,10 @@ export function Footer() {
               </ul>
             </div>
 
-            {/* Connect */}
+            {/* Connect + Theme Toggle */}
             <div className="space-y-4">
               <h3 className="font-semibold text-sm">Connect</h3>
+
               <div className="flex gap-3">
                 <a href="#" className="p-2 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground transition-all">
                   <Twitter className="w-4 h-4" />
@@ -60,10 +67,16 @@ export function Footer() {
                   <Mail className="w-4 h-4" />
                 </a>
               </div>
+
+              <div className="pt-4">
+                <h3 className="font-semibold text-sm mb-2">Theme</h3>
+                <ThemeToggle />
+              </div>
             </div>
+
           </div>
 
-          {/* Bottom */}
+          {/* Bottom Section */}
           <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <p>© {currentYear} GreenCity AI. All rights reserved.</p>
             <div className="flex gap-6">
@@ -72,6 +85,7 @@ export function Footer() {
               <a href="#" className="hover:text-primary transition-colors">Cookies</a>
             </div>
           </div>
+
         </div>
       </div>
     </footer>
